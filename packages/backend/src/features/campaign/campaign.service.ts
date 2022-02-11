@@ -18,7 +18,7 @@ export class CampaignService extends BaseService {
 
   findCampaigns(startDate?: string, endDate?: string, name?: string) {
     if (startDate === undefined || endDate === undefined) {
-      return name === undefined
+      return name === undefined || name == ""
         ? this.repo.findCampaigns(() => true)
         : this.repo.findCampaigns((campaign) =>
             campaign.name.toLowerCase().includes(name.toLowerCase())
@@ -28,7 +28,7 @@ export class CampaignService extends BaseService {
     const end = new Date(endDate);
     this.logger.info({ start, end });
 
-    return name === undefined
+    return name === undefined || name == ""
       ? this.repo.findCampaigns(
           (campaign) =>
             ((campaign.startDate >= start && campaign.startDate <= end) ||
