@@ -1,0 +1,13 @@
+POST http://localhost:3000/campaign
+Content-Type: application/json
+
+[
+  {
+    "id": 5,
+    "name": "Jurrasic Word",
+    "Budget": 32000,
+    "startDate": "2022-02-12",
+    "endDate": "2022-02-27",
+    "userId": 9
+  }
+]
