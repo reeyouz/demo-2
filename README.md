@@ -17,6 +17,7 @@
 3. Node-express-typescript backend with validations containing GET and POST /campaign written manually
 4. Keyword is debounced
 5. Redux Toolkit used
+6. Unit Tests for the backend
 
 ## Improvements
 
@@ -24,3 +25,5 @@
 2. Validations on Client Side
 3. BFF Pattern for shared types (ICampaign)
 4. config service for frontend with urls for different environments (dev, test, staging, prod)
+5. Unit Tests for the frontend (time limitations)
+6. Error Screens for HTTP 400/500
