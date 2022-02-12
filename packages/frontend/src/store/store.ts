@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { campaignReducer } from ".";
+import { campaignReducer, formReducer } from ".";
 
 export function getStore() {
   return configureStore({
     reducer: {
-      counter: campaignReducer,
+      campaign: campaignReducer,
+      form: formReducer,
     },
   });
 }

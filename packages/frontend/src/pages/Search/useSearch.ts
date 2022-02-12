@@ -1,43 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
+import {
+  updateEndDate,
+  updateKeyword,
+  updateStartDate,
+  useAppDispatch,
+  useAppSelector,
+} from "../../store";
 
-export interface SearchForm {
-  startDate?: string | undefined | null;
-  endDate?: string | undefined | null;
-  name?: string;
-}
-
-const initialFormValue: SearchForm = {
-  startDate: null,
-  endDate: null,
-  name: "",
-};
-
-export function useSearch(initial?: SearchForm) {
-  const [form, setForm] = useState<SearchForm>(initial ?? initialFormValue);
-
-  React.useEffect(() => {
-    console.log(form);
-  }, [form]);
+export function useSearch() {
+  const form = useAppSelector((state) => state.form);
+  const dispatch = useAppDispatch();
 
   const handleNameChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    setForm((prev) => ({
-      ...prev,
-      name: e.target.value,
-    }));
+    dispatch(updateKeyword(e.target.value));
   };
 
   const handleStartDateChange = (startDate: string | null | undefined) => {
-    setForm((prev) => ({
-      ...prev,
-      startDate,
-    }));
+    dispatch(
+      updateStartDate(
+        typeof startDate == "string"
+          ? startDate
+          : (startDate as any) instanceof Date
+          ? (startDate as any).toISOString()
+          : startDate
+      )
+    );
   };
 
   const handleEndDateChange = (endDate: string | null | undefined) => {
-    setForm((prev) => ({
-      ...prev,
-      endDate,
-    }));
+    dispatch(
+      updateEndDate(
+        typeof endDate == "string"
+          ? endDate
+          : (endDate as any) instanceof Date
+          ? (endDate as any).toISOString()
+          : endDate
+      )
+    );
   };
 
   return { form, handleNameChange, handleStartDateChange, handleEndDateChange };

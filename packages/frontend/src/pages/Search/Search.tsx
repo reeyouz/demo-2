@@ -1,21 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { useSearch } from "./useSearch";
-import { findCampaignsAsync, useAppDispatch } from "../../store";
 
-interface SearchProps {}
-export function Search(props: SearchProps) {
+export function Search() {
   const { form, handleStartDateChange, handleEndDateChange, handleNameChange } =
     useSearch();
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(findCampaignsAsync(form));
-  }, [form]);
 
   return (
     <form>

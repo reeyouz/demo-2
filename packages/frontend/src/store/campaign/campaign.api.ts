@@ -1,11 +1,11 @@
 import axios from "axios";
-import { SearchForm } from "../../pages";
+import { FormState } from "..";
 import { Campaign } from "./campaign.types";
 
 // TODO: Env based URL
-const baseURL = "http://localhost:3000/campaign";
+const baseURL = "http://127.0.0.1:3000/campaign";
 
-export function findCampaigns(params: SearchForm) {
+export function findCampaigns(params: FormState) {
   return axios.get<Campaign[]>(baseURL, {
     headers: {
       "Content-Type": "application/json",

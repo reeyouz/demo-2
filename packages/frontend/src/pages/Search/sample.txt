@@ -1,0 +1,18 @@
+[
+  {
+    id: 1,
+    name: "Fogg",
+    Budget: 56000,
+    startDate: new Date(),
+    endDate: new Date(),
+    userId: 3
+  },
+  {
+    id: 2,
+    name: "Monster Energy",
+    Budget: 35000,
+    startDate: new Date(),
+    endDate: new Date(),
+    userId: 2
+  }
+]
