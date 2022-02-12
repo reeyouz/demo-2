@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-interface SearchForm {
+export interface SearchForm {
   startDate?: string | undefined | null;
   endDate?: string | undefined | null;
   name?: string;

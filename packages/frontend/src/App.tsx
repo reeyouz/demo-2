@@ -1,13 +1,13 @@
 import React from "react";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { store } from "./store";
 import { Search } from "./pages";
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <Provider store={store}>
       <Search />
-    </LocalizationProvider>
+    </Provider>
   );
 }
 
