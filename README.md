@@ -27,3 +27,4 @@
 4. config service for frontend with urls for different environments (dev, test, staging, prod)
 5. Unit Tests for the frontend (time limitations)
 6. Error Screens for HTTP 400/500
+7. Caching and better refetching using rtk-query
